@@ -1,0 +1,16 @@
+os: osx
+before_install:
+  - echo -e "machine github.com\n login e4adff3f36631a9e2a25a487445bb30cb6d1ed28" >> ~/.netrc
+before_script:
+  - git lfs pull
+install: npm install
+script: webpack -d
+language: node_js
+node_js:
+  - "iojs"
+  - "7"
+branches:
+  only:
+    - gh-pages
+    - /.*/
+script: npm test
