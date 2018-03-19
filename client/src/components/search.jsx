@@ -10,9 +10,9 @@ class Search extends React.Component {
     }
   }
 
-  _executeSearch = async () => {
-    // TODO
-  }
+  // _executeSearch = async () => {
+  //   // TODO
+  // }
 
   render() {
     return (
@@ -31,7 +31,7 @@ class Search extends React.Component {
   }
 }
 
-const LISTING_SEARCH_QUERY; // graphQL query
+// const LISTING_SEARCH_QUERY; // graphQL query
 
 export default Search;
 

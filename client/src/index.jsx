@@ -19,7 +19,7 @@ import App from './components/app.jsx';
 
 ReactDOM.render(
   <BrowserRouter history={ browserHistory }>
-    //<ApolloProvider>
+    {/* <ApolloProvider> */}
       <App />
-    //</ApolloProvider>
+    {/* </ApolloProvider> */}
   </BrowserRouter>, document.getElementById('app'));
