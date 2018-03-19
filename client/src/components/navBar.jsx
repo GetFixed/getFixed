@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 
 class NavBar extends Component {
-  state = { activeItem: 'home' }
+  constructor(props) {
+    super(props);
+    this.state = { activeItem: 'home' }
+  }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick(e, { name }) {
+    this.setState({ activeItem: name });
+  }
 
   render() {
     const { activeItem } = this.state
