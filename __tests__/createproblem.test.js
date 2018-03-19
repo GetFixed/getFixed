@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 //components
-import FixButton from './../client/src/components/FixButton';
+import FixButton from './../client/src/components/FixButton.jsx';
 
 describe('<FixButton />', () => {
   it('should render', () => {
