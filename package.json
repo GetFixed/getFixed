@@ -4,7 +4,7 @@
   "description": "fix stuff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jshint hello.js",
     "webpack": "webpack -d --watch",
     "start": "nodemon --inspect server/index.js"
   },
@@ -25,5 +25,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5"
   }
 }
