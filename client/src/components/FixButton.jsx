@@ -10,7 +10,7 @@ const FixButton = () => {
 
   return (
     <div>
-      <button onClick={() => this._createListing()}>Fix My Stuff</button>
+      <button onClick={() => this._createListing()}>Fix My Stuf</button>
     </div>
   )
 }
