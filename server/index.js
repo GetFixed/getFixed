@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const settings = require('./../config/.cloudinary.js');
-let db = require('./server/config/index.js');
+let db = require('./config/index.js');
+
 
 
 const app = express();
