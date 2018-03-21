@@ -6,7 +6,6 @@ class ProblemsView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      problems: props.problems
     }
   }
 
@@ -14,7 +13,7 @@ class ProblemsView extends React.Component {
     return (
       <div className="ui right internal attached">
         <div className="ui cards">
-        {this.state.problems.map((problem, index) => <Problem key={problem.id} problem={problem} index={index} />)}
+        {this.props.problems.map((problem, index) => <Problem key={problem.id} problem={problem} index={index} />)}
         </div>
       </div>
     )

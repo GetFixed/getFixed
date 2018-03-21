@@ -7,6 +7,8 @@ const Problem = (props) => {
   var index = Math.round(Math.random()*13);
   var color = colors[index];
 
+  props.problem.image = props.problem.image || 'https://www.aquaspresso.co.za/wp-content/uploads/2015/10/what-problem-are-you-trying-to-solve.png';
+
   return (
     <div className={`ui very raised ${color} card`}>
       <Link to={`/singleProblemPage/${props.problem.id}`}>
@@ -18,13 +20,13 @@ const Problem = (props) => {
       </div>
 
       <div>
-        <Link to={`/userProfile/${props.problem.userId}`}>
+        <Link to={`/userProfile/${props.problem.id}`}>
           <div>
-            <a className={`ui ${color} image label`}>
+            <span className={`ui ${color} image label`}>
               <img src="https://www.w3schools.com/howto/img_avatar.png"/>
-              {props.problem.owner}
+              {props.problem.user_id}
               <div className="detail">⭐️⭐️⭐️⭐️⭐️</div>
-            </a>
+            </span>
           </div>
         </Link>
       </div>
