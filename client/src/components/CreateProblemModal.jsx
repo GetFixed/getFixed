@@ -53,8 +53,14 @@ class CreateProblemModal extends React.Component {
     event.preventDefault();
     this.closeModal();
     request
-      .post('/api/problemUpload')
-      .send({ name: this.state.name, description: this.state.description, image: this.state.cloudinaryUrl})
+      .post('/listing')
+      .send({
+        name: this.state.name,
+        description: this.state.description,
+        image: this.state.cloudinaryUrl,
+        city: this.state.city,
+        category: this.state.category
+      })
       .then(result => console.log(result));
   }
 
