@@ -2,62 +2,110 @@ const users = [
   {
     username: 'Gkolb',
     password: '123',
-    email: 'gkolb@yahoo.com'
+    email: 'gkolb@yahoo.com',
+    avg_rating: "4.72",
+    rating_count: 52,
+    city: "Denver",
+    phone_number: "13085971104"
   },
   {
     username: 'BLittle',
     password: '456',
-    email: 'brandon@testing.com'
+    email: 'brandon@testing.com',
+    avg_rating: "5.00",
+    rating_count: 4,
+    city: "Indianapolis",
+    phone_number: "19834128082"
   },
   {
     username: 'JFord',
     password: '789',
-    email: 'joe@testing.com'
+    email: 'joe@testing.com',
+    avg_rating: "1.1",
+    rating_count: 101,
+    city: "Los Angeles",
+    phone_number: "17778622992"
   },
   {
     username: 'KMaitski',
     password: 'abc',
-    email: 'kevin@testing.com'
+    email: 'kevin@testing.com',
+    avg_rating: "4.46",
+    rating_count: 64,
+    city: "Baltimore",
+    phone_number: "13529298818"
   },
   {
     username: 'bendandsnap',
     password: 'def',
-    email: 'bendandsnap@testing.com'
+    email: 'bendandsnap@testing.com',
+    avg_rating: "4.34",
+    rating_count: 87,
+    city: "Denver",
+    phone_number: "13529298818"
   },
   {
     username: 'cumberbatch',
     password: 'ghi',
-    email: 'cumberbatch@testing.com'
+    email: 'cumberbatch@testing.com',
+    avg_rating: "4.30",
+    rating_count: 6,
+    city: "Baltimore",
+    phone_number: "13017413473"
   },
   {
     username: 'curdlesnoot',
     password: 'jkl',
-    email: 'curdlesnoot@testing.com'
+    email: 'curdlesnoot@testing.com',
+    avg_rating: "4.9",
+    rating_count: 87,
+    city: "Seattle",
+    phone_number: "19834128082"
   },
   {
     username: 'chuckecheese',
     password: 'mno',
-    email: 'chuckecheese@testing.com'
+    email: 'chuckecheese@testing.com',
+    avg_rating: "4.82",
+    rating_count: 8,
+    city: "Fort Collins",
+    phone_number: "13085971104"
   },
   {
     username: 'cragglethatch',
     password: 'pqr',
-    email: 'cragglethatch@testing.com'
+    email: 'cragglethatch@testing.com',
+    avg_rating: "2.7",
+    rating_count: 13,
+    city: "Austin",
+    phone_number: "13529298818"
   },
   {
     username: 'crumplehorn',
     password: 'stu',
-    email: 'crumplehorn@testing.com'
+    email: 'crumplehorn@testing.com',
+    avg_rating: "4.72",
+    rating_count: 15,
+    city: "Seattle",
+    phone_number: "15404206460"
   },
   {
     username: 'snorkledink',
     password: 'vwx',
-    email: 'snorkledink@testing.com'
+    email: 'snorkledink@testing.com',
+    avg_rating: "4.50",
+    rating_count: 3,
+    city: "San Francisco",
+    phone_number: "14756906974"
   },
   {
     username: 'johnnycash',
     password: 'yz1',
-    email: 'johnnycash@testing.com'
+    email: 'johnnycash@testing.com',
+    avg_rating: "3.6",
+    rating_count: 5,
+    city: "New York City",
+    phone_number: "14756906974"
   }
 ];
 

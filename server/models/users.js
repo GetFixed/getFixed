@@ -19,15 +19,16 @@ module.exports = (sequelize, DataTypes) => {
   password: {
     type: DataTypes.STRING,
     required: true
-  }
-    // NEED TO ADD
-  // average_rating: {},
-  // rating_count: {},
+  },
+  avg_rating: DataTypes.STRING,
+  rating_count: DataTypes.INTEGER,
+  city: DataTypes.STRING,
+  phone_number: DataTypes.STRING
   // first_name: {},
   // last_name: {},
   // street: {},
   // state: {},
-  // city: {},
+
   // zipcode: {},
 });
   return User;
