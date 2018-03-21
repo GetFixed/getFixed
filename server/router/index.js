@@ -1,7 +1,8 @@
 'use strict'
 
 const routes = [
-  require('./routes/users.js')
+  require('./routes/users.js'),
+  require('./routes/listings.js')
 ];
 
 
