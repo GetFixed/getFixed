@@ -5,11 +5,9 @@ const bodyParser = require('body-parser');
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const settings = require('./../config/.cloudinary.js');
-let db = require('./config/index.js');
-
-
-
+const db = require('./config/index.js');
 const app = express();
+const router = require('./router/index.js')
 
 const PORT = process.env.PORT || 1337;
 
@@ -34,6 +32,8 @@ app.post('/api/problemUpload', (req, res) => {
   console.log('you got back here');
   res.send('You got into the server heres your response');
 })
+
+router(app, db);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, function() {
