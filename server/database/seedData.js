@@ -1,5 +1,6 @@
 const users = [
   {
+    user_id: '165a5baa-3846-4833-b19a-eba714077acf',
     username: 'Gkolb',
     password: '123',
     email: 'gkolb@yahoo.com',
@@ -9,6 +10,7 @@ const users = [
     phone_number: "13085971104"
   },
   {
+    user_id: '1406b551-995d-4cba-8734-28a50a4e9f1a',
     username: 'BLittle',
     password: '456',
     email: 'brandon@testing.com',
@@ -18,6 +20,7 @@ const users = [
     phone_number: "19834128082"
   },
   {
+    user_id: '17682716-7c8c-4130-a8c2-692c878110ca',
     username: 'JFord',
     password: '789',
     email: 'joe@testing.com',
@@ -27,6 +30,7 @@ const users = [
     phone_number: "17778622992"
   },
   {
+    user_id: '2baf363a-8285-4d83-92ba-8f5a22bba152',
     username: 'KMaitski',
     password: 'abc',
     email: 'kevin@testing.com',
@@ -36,6 +40,7 @@ const users = [
     phone_number: "13529298818"
   },
   {
+    user_id: '55bd721d-10c3-4cb8-988f-062780b160a7',
     username: 'bendandsnap',
     password: 'def',
     email: 'bendandsnap@testing.com',
@@ -45,6 +50,7 @@ const users = [
     phone_number: "13529298818"
   },
   {
+    user_id: '682caa79-9313-40fe-ac7a-538aeb4891ba',
     username: 'cumberbatch',
     password: 'ghi',
     email: 'cumberbatch@testing.com',
@@ -54,6 +60,7 @@ const users = [
     phone_number: "13017413473"
   },
   {
+    user_id: '7176e0e6-864e-45cb-a947-80bf2ae53ea6',
     username: 'curdlesnoot',
     password: 'jkl',
     email: 'curdlesnoot@testing.com',
@@ -63,6 +70,7 @@ const users = [
     phone_number: "19834128082"
   },
   {
+    user_id: 'a8db40c5-e107-4d9d-a3c2-3743cc1fb066',
     username: 'chuckecheese',
     password: 'mno',
     email: 'chuckecheese@testing.com',
@@ -72,6 +80,7 @@ const users = [
     phone_number: "13085971104"
   },
   {
+    user_id: 'b8a94c56-7adc-44cb-87f3-d816042681b4',
     username: 'cragglethatch',
     password: 'pqr',
     email: 'cragglethatch@testing.com',
@@ -81,6 +90,7 @@ const users = [
     phone_number: "13529298818"
   },
   {
+    user_id: 'ccd32131-9509-4a51-894d-fe481bbbd474',
     username: 'crumplehorn',
     password: 'stu',
     email: 'crumplehorn@testing.com',
@@ -90,6 +100,7 @@ const users = [
     phone_number: "15404206460"
   },
   {
+    user_id: 'dee11b83-449e-400c-8435-7066d7f6cf40',
     username: 'snorkledink',
     password: 'vwx',
     email: 'snorkledink@testing.com',
@@ -99,6 +110,7 @@ const users = [
     phone_number: "14756906974"
   },
   {
+    user_id: 'fe2db660-f092-434d-bb7f-7b192620dcc1',
     username: 'johnnycash',
     password: 'yz1',
     email: 'johnnycash@testing.com',
