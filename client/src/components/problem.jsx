@@ -20,7 +20,7 @@ const Problem = (props) => {
       </div>
 
       <div>
-        <Link to={`/userProfile/${props.problem.id}`}>
+        <Link to={`/userProfile/${props.problem.user_id}`}>
           <div>
             <span className={`ui ${color} image label`}>
               <img src="https://www.w3schools.com/howto/img_avatar.png"/>

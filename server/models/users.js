@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   avg_rating: DataTypes.STRING,
   rating_count: DataTypes.INTEGER,
   city: DataTypes.STRING,
-  phone_number: DataTypes.STRING
+  phone_number: DataTypes.STRING,
+  num: DataTypes.STRING
   // first_name: {},
   // last_name: {},
   // street: {},

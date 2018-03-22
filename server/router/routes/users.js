@@ -8,10 +8,10 @@ module.exports = (app, db) => {
 
   app.get('/user/:id', (req, res) => {
     let user_id = req.params.id;
-    console.log(user_id)
+    console.log('\n', user_id, '\n')
     db.users.findAll({
       where: {
-        id: user_id
+        num: user_id
       }
     })
     .then(user => {
