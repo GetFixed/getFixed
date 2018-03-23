@@ -1,7 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const passport   = require('passport')
+const session    = require('express-session')
 const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const settings = require('./../config/.cloudinary.js');
@@ -88,8 +91,11 @@ const root = {
 const schema = graphQLTools.makeExecutableSchema({ typeDefs });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(session({secret: 'keyboard cat', resave: true, saveUninitialized:true}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash())
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/graphql', bodyParser.json(), graphQLExp.graphqlExpress({ schema:schema, rootValue: root, graphiql: true }));
 app.use('/graphiql', graphQLExp.graphiqlExpress({ endpointURL: '/graphql' }));
