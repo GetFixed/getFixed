@@ -60,6 +60,8 @@ class Landing extends React.Component {
             </div>
             <div className="thirteen wide column">
               <ProblemsView problems={this.state.problems} />
+              {this.state.problems.length === 0 &&
+              <h1>Looks like you are offline please reconnect to see the listings</h1>}
             </div>
           </div>
         <div className="ui hidden divider"></div>
