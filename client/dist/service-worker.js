@@ -10,7 +10,7 @@ importScripts ('/cache-polyfill.js');
         .then(cache => {
           // console.log(cache);
           return cache.addAll([
-            '/https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
             '/bundle.js'
           ]);
         })
