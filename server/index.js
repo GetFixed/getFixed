@@ -10,9 +10,11 @@ const app = express();
 const router = require('./router/index.js');
 const graphQLTools = require('graphql-tools');
 const graphQLExp = require('apollo-server-express');
-const lodash = require('lodash/util')
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 
 const PORT = process.env.PORT || 8080;
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/]));
 
 const typeDefs = `
   type Query {
