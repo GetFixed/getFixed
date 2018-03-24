@@ -3,16 +3,14 @@ importScripts ('/cache-polyfill.js');
 (function() {
   self.addEventListener('install', event => {
     console.log('Service worker installing...');
-    // self.skipWaiting();
+    self.skipWaiting();
     event.waitUntil(
       caches
         .open('getFixed')
         .then(cache => {
           // console.log(cache);
           return cache.addAll([
-            '/',
-            // '/landing',
-            // '/http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
+            '/https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
             '/bundle.js'
           ]);
         })
