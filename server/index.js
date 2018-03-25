@@ -18,14 +18,15 @@ app.use(redirectToHTTPS([/localhost:(\d{4})/]));
 
 const typeDefs = `
   type Query {
-    user(num: String!): User
+    user(num: String!, user_id: String): User
     allUsers: [User]
-    listing(id: String!): Listing
+    listing(user_id: String!): Listing
     allListings: [Listing]
+    listings(user_id: String): [Listing]
   }
 
   type User {
-    id: String
+    id: String!
     username: String
     email: String
     avg_rating: String
@@ -33,16 +34,21 @@ const typeDefs = `
     city: String
     phone_number: String
     num: String
+    listings: Listings
   }
 
   type Listing {
     id: String
-    user_id: String
+    user_id: String!
     title: String
     description: String
     category: String
     location: String
     image: String
+  }
+
+  type Listings {
+    data(user_id: String): [Listing]
   }
 
   type Mutation {
@@ -51,27 +57,37 @@ const typeDefs = `
     deleteUser(id: String!): User
     deleteListing(id: String!): Listing
   }
+
+  schema {
+    query: Query
+    mutation: Mutation
+  }
 `;
 
-const root = {
-  user: (obj, args, context) => {
+const resolvers = {
+  user: (args) => {
     return db.users.find({
-      where: obj
+      where: args
     });
   },
-  allUsers: (obj, args, context) => {
+  allUsers: (args) => {
     return db.users.findAll();
   },
-  listing: (obj, args, context) => {
+  listing: (args) => {
     return db.listings.find({
-      where: obj
+      where: args
     });
+  },
+  listings: (args) => {
+    return db.listings.findAll();
   },
   allListings: (obj, args, context) => {
     return db.listings.findAll();
   },
   createUser: (obj, args, context) => {
-    return db.users.create(obj);
+    const newUser = obj;
+    db.users.create(obj);
+    return
   },
   createListing: (obj, args, context) => {
     return db.listings.create(obj);
@@ -94,7 +110,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
-app.use('/graphql', bodyParser.json(), graphQLExp.graphqlExpress({ schema:schema, rootValue: root, graphiql: true }));
+app.use('/graphql', bodyParser.json(), graphQLExp.graphqlExpress({ schema:schema, rootValue: resolvers, graphiql: true }));
 app.use('/graphiql', graphQLExp.graphiqlExpress({ endpointURL: '/graphql' }));
 
 //app.use('/', routes);
