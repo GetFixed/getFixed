@@ -4,7 +4,7 @@ import { BrowserRouter, browserHistory } from 'react-router-dom';
 import App from './components/app.jsx';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { ApolloProvider } from 'react-apollo'
-import { ApolloClient } from 'apollo-client'
+import { ApolloClient } from 'apollo-boost'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 

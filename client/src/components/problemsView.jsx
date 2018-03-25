@@ -1,23 +1,16 @@
 import React from 'react';
 import Problem from './problem.jsx';
+import Username from './username.jsx';
+import { Card } from 'semantic-ui-react';
 
-class ProblemsView extends React.Component {
+const ProblemsView = ({problems}) => (
 
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
+  <div>
+    <Card.Group className="ui cards" itemsPerRow={3}>
+      {problems.map((problem, index) => <Problem key={index} problem={problem} userId={problem.user_id} index={index} />)}
+    </Card.Group>
+  </div>
 
-  render() {
-    return (
-      <div className="ui right internal attached">
-        <div className="ui cards">
-        {this.props.problems.map((problem, index) => <Problem key={problem.id} problem={problem} userId={problem.user_id} index={index} />)}
-        </div>
-      </div>
-    )
-  }
-}
+)
 
 export default ProblemsView;

@@ -6,7 +6,8 @@ import ProblemsView from './problemsView.jsx';
 import CategoryView from './categoryView.jsx';
 import Sidebar from './sidebar.jsx';
 import Footer from './footer.jsx';
-import axios from 'axios';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
 
 const filters = [
@@ -24,53 +25,48 @@ const filters = [
   }
 ]
 
-class Landing extends React.Component {
+const LandingQL = () => (
 
-  constructor(props){
-    super(props);
-    this.state = {
-      problems: []
-    };
-  }
+  <Query query={gql`
+    query getProblems {
+      allListings {
+        image
+        title
+        description
+        user_id
+      }
+    }
+  `}
+  >
+    {({ loading, error, data }) => {
 
-  componentDidMount() {
-    axios.get('/listings')
-      .then(response => {
-        this.setState({
-          problems: response.data,
-        });
-      })
-      .catch(error => {
-        console.log('Error fetching data for LISTINGS', error);
-      });
-  }
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error :(</p>;
 
-  render() {
-    return (
-      <div>
+      return (
         <div>
-          <Navbar />
-          <CategoryView />
-        </div>
-        <div className="ui hidden divider"></div>
-        <div>
-          <div className="ui grid container">
-            <div className="ui left aligned three wide column">
-              <Sidebar filters={filters}/>
-            </div>
-            <div className="thirteen wide column">
-              <ProblemsView problems={this.state.problems} />
-              {this.state.problems.length === 0 &&
-              <h1>Looks like you are offline please reconnect to see the listings</h1>}
+          <div>
+            <Navbar />
+            <CategoryView />
+          </div>
+          <div className="ui hidden divider"></div>
+          <div>
+            <div className="ui grid container">
+              <div className="ui left aligned three wide column">
+                <Sidebar filters={filters}/>
+              </div>
+              <div className="thirteen wide column">
+                <ProblemsView problems={data.allListings} />
+              </div>
             </div>
           </div>
-        <div className="ui hidden divider"></div>
+          <div className="ui hidden divider"></div>
+          <Footer />
+          <br />
         </div>
-        <Footer />
-        <br />
-      </div>
-    )
-  }
-}
+      )
+    }}
+    </Query>
+)
 
-export default Landing;
+export default LandingQL;
