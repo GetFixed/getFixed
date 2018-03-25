@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#fff">
   </head>
   <body>
-    <div id='app'></div>
+    <div id='app'>JavaScript is needed to view this page</div>
   </body>
   <script src='bundle.js'></script>
   <script>
@@ -33,7 +33,7 @@
         return;
       }
 
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('/service-worker.js')
         .then(registration => console.log('Registered at scope:', registration.scope))
         .catch(err => console.log('Registration failed', err));
     })();
