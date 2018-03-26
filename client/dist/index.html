@@ -3,36 +3,37 @@
   <head>
     <meta charset='utf-8'>
     <title>Get Fixed</title>
+    <link rel="canonical" href="https://getfixed-198822.appspot.com/" />
     <link rel="icon" type="image/png" href="tiny.png" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"></link>
     <link rel="manifest" href="/manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="GetFixed">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
-  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
-  <meta name="msapplication-TileColor" content="#fff">
-  <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="GetFixed">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#fff">
   </head>
   <body>
-    <div id='app'></div>
+    <div id='app'>JavaScript is needed to view this page</div>
   </body>
-  <script src='bundle.js'></script>
-  <script>
+  <script src='bundle.js' async></script>
+  <script async>
     (function() {
       if (!('serviceWorker' in navigator)) {
         console.log('Service worker not supported');
         return;
       }
 
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('/service-worker.js')
         .then(registration => console.log('Registered at scope:', registration.scope))
         .catch(err => console.log('Registration failed', err));
     })();

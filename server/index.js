@@ -10,9 +10,20 @@ const app = express();
 const router = require('./router/index.js');
 const graphQLTools = require('graphql-tools');
 const graphQLExp = require('apollo-server-express');
-const lodash = require('lodash/util')
 
 const PORT = process.env.PORT || 8080;
+
+app.enable('trust proxy');
+
+app.use((req, res, next) => {
+  console.log(req.headers.host);
+  if (req.secure || req.headers.host === 'localhost:8080') {
+    next();
+  } else {
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
+
 
 const typeDefs = `
   type Query {
