@@ -24,7 +24,6 @@ app.use((req, res, next) => {
   }
 });
 
-
 const typeDefs = `
   type Query {
     user(num: String!): User
