@@ -10,7 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 
 
 // APOLLO SERVER CONNECTION - create a link that connects the Apollo Client to graphQL server
-const httpLink = new HttpLink({ uri: 'http://localhost:8080/graphql' });
+const httpLink = new HttpLink({ uri: '/graphql' });
 
 // Instantiate ApolloClient
 const client = new ApolloClient({
