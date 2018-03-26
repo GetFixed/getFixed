@@ -10,11 +10,19 @@ const app = express();
 const router = require('./router/index.js');
 const graphQLTools = require('graphql-tools');
 const graphQLExp = require('apollo-server-express');
-const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 
 const PORT = process.env.PORT || 8080;
 
-app.use(redirectToHTTPS([/localhost:(\d{4})/]));
+app.enable('trust proxy');
+
+app.use((req, res, next) => {
+  console.log(req.headers.host);
+  if (req.secure || req.headers.host === 'localhost:8080') {
+    next();
+  } else {
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
 
 const typeDefs = `
   type Query {
