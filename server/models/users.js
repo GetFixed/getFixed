@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
   // last_name: {},
   // street: {},
   // state: {},
-
   // zipcode: {},
 });
   return User;

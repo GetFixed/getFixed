@@ -3,6 +3,7 @@ import { Input, Menu, Button} from 'semantic-ui-react';
 import FixButton from './fixButton.jsx';
 import CamShot from './cameraFunction.jsx';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -10,10 +11,20 @@ class Navbar extends React.Component {
     this.state = {
 
     }
+    this.handleClick = this.handleClick.bind(this);
+
   }
 
 
-
+    handleClick(e) {
+      axios.get('/logout')
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
 
   render() {
 
@@ -45,6 +56,9 @@ class Navbar extends React.Component {
         </Link>
           <Menu.Item>
              <CamShot />
+
+             <Button onClick={this.handleClick}basic color='teal' content='Logout' />
+
           </Menu.Item>
         </Menu.Menu>
       </Menu>

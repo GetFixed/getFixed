@@ -1,19 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const passport   = require('passport')
-const session    = require('express-session')
+const passport = require('passport')
+const cookieParser = require('cookie-parser');
+const session = require('express-session')
 const bodyParser = require('body-parser');
-const flash = require('connect-flash');
 const cloudinary = require('cloudinary');
 const multer = require('multer');
 const settings = require('./../config/.cloudinary.js');
-const db = require('./database/index.js');
 const app = express();
 const router = require('./router/index.js');
 const graphQLTools = require('graphql-tools');
 const graphQLExp = require('apollo-server-express');
-
+const db = require('./database/index.js');
 const PORT = process.env.PORT || 8080;
 
 app.enable('trust proxy');
@@ -25,6 +24,8 @@ app.use((req, res, next) => {
     res.redirect('https://' + req.headers.host + req.url);
   }
 });
+
+
 
 const typeDefs = `
   type Query {
@@ -102,13 +103,21 @@ const root = {
 
 const schema = graphQLTools.makeExecutableSchema({ typeDefs });
 
+app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true }));
+app.use(cookieParser());
 app.use(session({secret: 'keyboard cat', resave: true, saveUninitialized:true}));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash())
+require('./passport/passport.js')(passport, db.users);
+
+
+// app.use(flash())
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
+var authRoute = require('./router/routes/auth.js')(app, db, passport);
+
+
 app.use('/graphql', bodyParser.json(), graphQLExp.graphqlExpress({ schema:schema, rootValue: root, graphiql: true }));
 app.use('/graphiql', graphQLExp.graphiqlExpress({ endpointURL: '/graphql' }));
 
@@ -145,4 +154,14 @@ db.sequelize.sync()
     });
   })
   .catch(err => console.log(err));
+=======
+
+db.sequelize.sync().then(function(){
+  app.listen(PORT, function() {
+    console.log(`listening on port ${PORT}`);
+  });
+})
+
+
+>>>>>>> Implemented auth
 

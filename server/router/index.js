@@ -3,6 +3,7 @@
 const routes = [
   require('./routes/users.js'),
   require('./routes/listings.js')
+  // require('./routes/auth.js')
 ];
 
 
