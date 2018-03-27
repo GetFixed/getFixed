@@ -6,11 +6,7 @@ importScripts('/cache-polyfill.js');
     self.skipWaiting();
     event.waitUntil(
       caches
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> test
         .open('getFixed')
         .then(cache => {
           return cache.addAll([
@@ -21,21 +17,7 @@ importScripts('/cache-polyfill.js');
           ]);
         })
         .catch(err => console.log('Install Error:', err))
-<<<<<<< HEAD
 
-=======
-=======
-      .open('getFixed')
-      .then(cache => {
-        // console.log(cache);
-        return cache.addAll([
-          'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
-          '/bundle.js'
-        ]);
-      })
-      .catch(err => console.log('Install Error:', err))
->>>>>>> test
->>>>>>> test
     );
   });
 
