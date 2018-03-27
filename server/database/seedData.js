@@ -134,7 +134,7 @@ const listings = [
     user_id: '1406b551-995d-4cba-8734-28a50a4e9f1a',
     title: 'Slow computer',
     description:
-      'I could really use some help upgrading my computer. I don't want to spend an arm and a leg',
+      "I could really use some help upgrading my computer. I don't want to spend an arm and a leg",
     category: 'computer skills',
     location: 'Vancouver',
     image:
@@ -153,7 +153,7 @@ const listings = [
     user_id: '17682716-7c8c-4130-a8c2-692c878110ca',
     title: 'Lawnmower oil leak',
     description:
-      'My lawnmower leaks oil. I'm not sure if it's from a hose or something else.',
+      "My lawnmower leaks oil. I'm not sure if it's from a hose or something else.",
     category: 'automotive',
     location: 'Miami',
     image: 'https://i.ytimg.com/vi/_10j1Xvl_wY/hqdefault.jpg'
@@ -162,7 +162,7 @@ const listings = [
     user_id: '17682716-7c8c-4130-a8c2-692c878110ca',
     title: 'Hair dryer short cycle',
     description:
-      'It works for a moment and then shuts off. It doesn't even get very hot.',
+      "It works for a moment and then shuts off. It doesn't even get very hot.",
     category: 'specialty',
     location: 'San Francisco',
     image:
@@ -172,7 +172,7 @@ const listings = [
     user_id: '2baf363a-8285-4d83-92ba-8f5a22bba152',
     title: 'Mixer',
     description:
-      'I'm a DJ and I have an old Pioneer mixer that I don't want to throw away. Some of the lights don't work, and two output jacks need to be replaced',
+      "I'm a DJ and I have an old Pioneer mixer that I don't want to throw away. Some of the lights don't work, and two output jacks need to be replaced",
     category: 'electronics',
     location: 'Phoenix',
     image:
@@ -182,7 +182,7 @@ const listings = [
     user_id: '2baf363a-8285-4d83-92ba-8f5a22bba152',
     title: 'Squeaky and stiff garage door',
     description:
-      'The door is really stiff when opening. It doesn't open all of the way, and it makes a sound like it's scraping against something.',
+      "The door is really stiff when opening. It doesn't open all of the way, and it makes a sound like it's scraping against something.",
     category: 'handyman',
     location: 'El Paso',
     image:
@@ -201,7 +201,7 @@ const listings = [
     user_id: '682caa79-9313-40fe-ac7a-538aeb4891ba',
     title: 'Oil change needed',
     description:
-      'I think it's time to change the oil in my car. It's a 2005 Toyota Camry.',
+      "I think it's time to change the oil in my car. It's a 2005 Toyota Camry.",
     category: 'automotive',
     location: 'San Antonio',
     image:
@@ -240,7 +240,7 @@ const listings = [
     user_id: 'ccd32131-9509-4a51-894d-fe481bbbd474',
     title: 'Glasses frames falling apart',
     description:
-      'I broke the arm on the frame of my glasses. It just needs to be reattached, but I don't have the tools.',
+      "I broke the arm on the frame of my glasses. It just needs to be reattached, but I don't have the tools.",
     category: 'stuff',
     location: 'Houston',
     image:
@@ -250,7 +250,7 @@ const listings = [
     user_id: 'dee11b83-449e-400c-8435-7066d7f6cf40',
     title: 'Torn sweatshirt',
     description:
-      'My hoodie has a tear just under the hood. I'm looking for someone to sew it up for me',
+      "My hoodie has a tear just under the hood. I'm looking for someone to sew it up for me",
     category: 'specialty',
     location: 'San Antonio',
     image:
