@@ -102,7 +102,6 @@ const root = {
 }
 
 const schema = graphQLTools.makeExecutableSchema({ typeDefs });
-
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -112,7 +111,7 @@ app.use(passport.session());
 require('./passport/passport.js')(passport, db.users);
 
 
-// app.use(flash())
+
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 var authRoute = require('./router/routes/auth.js')(app, db, passport);
@@ -154,14 +153,4 @@ db.sequelize.sync()
     });
   })
   .catch(err => console.log(err));
-=======
-
-db.sequelize.sync().then(function(){
-  app.listen(PORT, function() {
-    console.log(`listening on port ${PORT}`);
-  });
-})
-
-
->>>>>>> Implemented auth
 

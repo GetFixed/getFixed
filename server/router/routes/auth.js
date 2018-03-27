@@ -8,6 +8,11 @@ module.exports = (app, db, passport) => {
     })
   );
 
+
+  app.get('/loginFailed', function(req, res) {
+    res.end('Incorrect username or password');
+  });
+
   app.post('/login',
     (req, res, next) => {
     console.log('body', req.body);
@@ -17,8 +22,7 @@ module.exports = (app, db, passport) => {
     },
     passport.authenticate('local-login', {
       successRedirect: '/',
-      failureRedirect: '/',
-      // failureFlash: true
+      failureRedirect: '/loginPage',
     })
   );
 

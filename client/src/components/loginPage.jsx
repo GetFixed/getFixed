@@ -9,7 +9,8 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      error: ''
     };
     this.handleClick = this.handleClick.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -30,16 +31,19 @@ class LoginPage extends React.Component {
   }
 
   handleClick(e) {
+
     var context = this;
     axios.post('/login', {
         username: this.state.username,
         password: this.state.password,
       })
       .then(function (response) {
-        context.props.history.push("/")
-        console.log(response);
+        // context.props.history.push("/");
+        console.log(response.message);
       })
       .catch(function (error) {
+        e.preventDefault();
+        context.setState({error: 'Inncorrect username or password'})
         console.log(error);
       });
   }
@@ -105,6 +109,7 @@ class LoginPage extends React.Component {
             <Message>
               <Link to ='/signUp'>New to us? <a href='#'>Sign Up</a></Link>
             </Message>
+            {this.state.error && <p style={{color: 'red'}}>{this.state.errMsg}</p>}
           </Grid.Column>
         </Grid>
       </div>

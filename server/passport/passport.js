@@ -82,7 +82,7 @@ module.exports = function(passport, user) {
   passport.use('local-login', new LocalStrategy({
       usernameField : 'username',
       passwordField : 'password',
-      passReqToCallback : true // allows us to pass back the entire request to the callback
+      passReqToCallback : true, // allows us to pass back the entire request to the callback
     },
 
     function(req, username, password, done) {
@@ -91,18 +91,19 @@ module.exports = function(passport, user) {
       }
       User.findOne({where: { username: username}})
       .then(function (user) {
+        console.log(user)
         if (!user) {
-          return done(null, false, { message: 'Username does not exist' });
+          return done(null, false);
         }
         if (!isValidPassword(user.password, password)) {
-          return done(null, false, { message: 'Incorrect password.' });
+          return done(null, false);
         }
         var userinfo = user.get();
         return done(null, userinfo);
       })
       .catch(function(err){
         console.log("Error:",err);
-        return done(null, false, { message: 'Something went wrong with your login' });
+        return done(null, false);
       });
     }
     ));
