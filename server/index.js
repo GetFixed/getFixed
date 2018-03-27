@@ -28,7 +28,7 @@ const typeDefs = `
     user(num: String!): User
     allUsers: [User]
     listing(id: String!): Listing
-    allListings: [Listing]
+    allListings(category: String): [Listing]
   }
 
   type User {
@@ -75,7 +75,9 @@ const root = {
     });
   },
   allListings: (obj, args, context) => {
-    return db.listings.findAll();
+    return db.listings.findAll({
+      where: obj
+    });
   },
   createUser: (obj, args, context) => {
     return db.users.create(obj);

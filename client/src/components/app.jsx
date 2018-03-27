@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Landing from './landing.jsx'
 import LoginPage from './loginPage.jsx'
 import SingleProblemPage from './singleProblemPage.jsx'
@@ -12,13 +12,16 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Route exact path='/' component={ Landing } />
-        <Route path='/signup' component={ Signup } />
-        <Route path='/landing' component={ Landing } />
-        <Route path='/loginPage' component={ LoginPage } />
-        <Route path='/singleProblemPage/:id/:username' component={ SingleProblemPage } />
-        <Route path='/userProfile/:id' component={ UserProfile } />
-        <Route path='/viewConversation' component={ ViewConversation } />
+        <Switch>
+          <Route exact path='/' component={ Landing } />
+          <Route path='/signup' component={ Signup } />
+          <Route path='/landing/:category' component={ Landing } />
+          <Route path='/landing' component={ Landing } />
+          <Route path='/loginPage' component={ LoginPage } />
+          <Route path='/singleProblemPage/:id/:username' component={ SingleProblemPage } />
+          <Route path='/userProfile/:id' component={ UserProfile } />
+          <Route path='/viewConversation' component={ ViewConversation } />
+        </Switch>
       </div>
     )
   }

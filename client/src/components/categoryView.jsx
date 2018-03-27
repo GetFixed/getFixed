@@ -1,24 +1,26 @@
-import React, { Component } from 'react'
-import { Button} from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Button} from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 
 
 
-export default class CategoryView extends React.Component {
+class CategoryView extends React.Component {
     constructor(props) {
     super(props)
     this.state = {
        activeItem: 'home'
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
-
+  handleClick(e) {
+    let category = e.target.innerText.toLowerCase();
+    this.props.history.push(`/landing/${category}`);
+  }
 
   render() {
-
-
     return (
-
-      <div>
+      <div onClick={this.handleClick}>
         <Button color='violet'>Electronics</Button>
         <Button color='orange'>Automotive</Button>
         <Button color='yellow'>HandyMan</Button>
@@ -31,3 +33,5 @@ export default class CategoryView extends React.Component {
     )
   }
 }
+
+export default withRouter(CategoryView);
