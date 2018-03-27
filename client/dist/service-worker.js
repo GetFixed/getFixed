@@ -6,7 +6,6 @@ importScripts('/cache-polyfill.js');
     self.skipWaiting();
     event.waitUntil(
       caches
-
         .open('getFixed')
         .then(cache => {
           return cache.addAll([
