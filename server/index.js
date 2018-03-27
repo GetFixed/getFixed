@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 8080;
 app.enable('trust proxy');
 
 app.use((req, res, next) => {
-  console.log(req.headers.host);
   if (req.secure || req.headers.host === 'localhost:8080') {
     next();
   } else {
