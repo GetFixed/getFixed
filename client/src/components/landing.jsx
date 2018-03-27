@@ -27,10 +27,7 @@ const filters = [
 
 const Landing = (props) => {
   const { params: { category }} = props.match;
-  let query;
-
-  if (category) {
-    query = gql`
+  let query= gql`
       query getProblems($category: String) {
         allListings(category: $category) {
           id
@@ -41,19 +38,6 @@ const Landing = (props) => {
         }
       }
     `;
-  } else {
-    query = gql`
-      query getProblems {
-        allListings {
-          id
-          image
-          title
-          description
-          user_id
-        }
-      }
-    `;
-  }
 
   return (
 
