@@ -38,7 +38,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://getfixed-198822.appspot.com/",
+  "start_url": "/index.html",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",

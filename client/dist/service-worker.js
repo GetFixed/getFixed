@@ -10,7 +10,9 @@ importScripts ('/cache-polyfill.js');
         .then(cache => {
           return cache.addAll([
             'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css',
-            '/bundle.js'
+            '/bundle.js',
+            '/',
+            '/index.html'
           ]);
         })
         .catch(err => console.log('Install Error:', err))
