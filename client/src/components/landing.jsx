@@ -50,7 +50,6 @@ const Landing = (props) => {
           <div>
             <Navbar />
           </div>
-
               <CategoryView history={history}/>
                 <div className="ui hidden divider"></div>
                     <div className="ui grid container">
