@@ -137,6 +137,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
+<<<<<<< HEAD
 db.sequelize
   .authenticate()
   .then(() => {
@@ -146,6 +147,8 @@ db.sequelize
     console.error("Unable to connect to the database:", err);
   });
 
+=======
+>>>>>>> Update server
 db.sequelize.sync()
   .then(() => {
     app.listen(PORT, function() {
