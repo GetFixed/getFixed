@@ -16,17 +16,13 @@ var sequelize = new Sequelize(
   }
 );
 let db = {};
-
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-
 //Models/tables
-
 db.users = require('./server/models/users.js')(sequelize, Sequelize);
 db.listings = require('./server/models/listings.js')(sequelize, Sequelize);
 
 var casual = require('casual');
-
 function createUsers(quantity) {
   let users = [];
   for (var i = 0; i <= quantity; i++) {
@@ -57,7 +53,6 @@ const images = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO4K6AhmquePXtXxXUXO18uPi9YVuDNFdse-ZKkCboYW2s9BFJaQ',
   'https://mobileimages.lowes.com/product/converted/693759/6937590200395.jpg'
 ]
-
 const categories = [
   'electronics',
   'automotive',
@@ -183,7 +178,6 @@ users.forEach(function(user) {
 //       sequelize.close();
 //     });
 // });
-
 
 // db.sequelize.sync({force: true})
 //   .then(function() {
