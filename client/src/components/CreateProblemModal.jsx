@@ -152,7 +152,7 @@ class CreateProblemModal extends React.Component {
                     </div>
                     }
                   </div>
-                  <a href="https://www.youtube.com/embed/jNSORWnr5ZQ?start?autoplay=1">click here</a>
+                  <a href="https://www.youtube.com/embed/jNSORWnr5ZQ?autoplay=1">click here</a>
                   <button onClick={this.handleSubmit}>Submit your Problem</button>
                 </div>
               </form>
