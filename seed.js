@@ -53,6 +53,7 @@ const images = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO4K6AhmquePXtXxXUXO18uPi9YVuDNFdse-ZKkCboYW2s9BFJaQ',
   'https://mobileimages.lowes.com/product/converted/693759/6937590200395.jpg'
 ]
+
 const categories = [
   'electronics',
   'automotive',
