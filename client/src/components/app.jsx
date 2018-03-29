@@ -9,11 +9,22 @@ import UserProfile from './userProfile.jsx'
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+      isLoggedIn: false
+    };
+  }
+
   render () {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={ Landing } />
+          <Route
+            exact path='/' component={ Landing }
+
+          />
           <Route path='/signup' component={ Signup } />
           <Route path='/landing/:category' component={ Landing } />
           <Route path='/landing' component={ Landing } />
