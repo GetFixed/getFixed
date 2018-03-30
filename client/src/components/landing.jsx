@@ -7,7 +7,10 @@ import Footer from './footer.jsx';
 const Landing = (props) => (
   <div>
     <div>
-      <Navbar />
+      <Navbar
+        isLoggedIn={props.isLoggedIn}
+        onLogout={props.onLogout}
+        />
     </div>
     <div className="ui hidden divider"></div>
     <div className="ui grid container">

@@ -12,28 +12,97 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
+      user: ''
     }
+    this.onLogin = this.onLogin.bind(this);
+    this.onLogout = this.onLogout.bind(this);
   }
+
+  onLogin(user) {
+    this.setState({
+      isLoggedIn: true,
+      user: user
+    });
+
+  }
+
+  onLogout() {
+    this.setState({
+      isLoggedIn: false,
+      user: ''
+    })
+  }
+
   render () {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={ Landing } />
-          <Route path='/signup' component={ Signup } />
-          <Route path='/landing/:category' component={ Landing } />
-          <Route path='/landing'
+          <Route
+            exact path='/'
+            render={
+              (props) => {
+                return <Landing {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  onLogout={this.onLogout}
+                  />
+                }
+              } />
+          <Route
+            path='/signup'
+            render={
+              (props) => {
+                return <Signup {...props}
+                  onLogin={this.onLogin}
+                  />
+                }
+              } />
+          <Route
+            path='/landing/:category'
             render={
               (props) => {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   />
                 }
-              }
-          />
-          <Route path='/loginPage' component={ LoginPage } />
-          <Route path='/singleProblemPage/:id/:username' component={ SingleProblemPage } />
-          <Route path='/userProfile/:id' component={ UserProfile } />
+              } />
+          <Route
+            path='/landing'
+            render={
+              (props) => {
+                return <Landing {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  />
+                }
+              } />
+          <Route
+            path='/loginPage'
+            render={
+              (props) => {
+                return <LoginPage {...props}
+                  onLogin={this.onLogin}
+                  />
+                }
+              } />
+          <Route
+            path='/singleProblemPage/:id/:username'
+            render={
+              (props) => {
+                return <SingleProblemPage {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  />
+                }
+              } />
+          <Route path='/userProfile'
+            render={
+              (props) => {
+                return <UserProfile {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  user={this.state.user}
+                  />
+                }
+              } />
+            />
           <Route path='/viewConversation' component={ ViewConversation } />
         </Switch>
       </div>

@@ -18,7 +18,7 @@ class LoginPage extends React.Component {
   }
 
   onChange(e) {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value});
   }
   testFunc(e) {
     axios.get('/test')
@@ -38,8 +38,13 @@ class LoginPage extends React.Component {
         password: this.state.password,
       })
       .then(function (response) {
-        context.props.history.push("/");
-        console.log(response.message);
+        console.log(response)
+        if (response.data === 'Incorrect username or password') {
+          context.setState({error: 'Inncorrect username or password'})
+        } else {
+          context.props.onLogin(response.data);
+          context.props.history.push("/");
+        }
       })
       .catch(function (error) {
         e.preventDefault();
@@ -99,12 +104,17 @@ class LoginPage extends React.Component {
                   fluid size='large'
                   onClick={this.handleClick}
                 >Login</Button>
+                <Button
+                    color='teal'
+                    fluid size='large'
+                    onClick={this.testFunc}
+                  >Test</Button>
               </Segment>
             </Form>
             <Message>
               <Link to ='/signUp'>New to us? <a href='#'>Sign Up</a></Link>
             </Message>
-            {this.state.error && <p style={{color: 'red'}}>{this.state.errMsg}</p>}
+            {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
           </Grid.Column>
         </Grid>
       </div>

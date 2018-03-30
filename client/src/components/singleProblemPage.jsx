@@ -29,7 +29,7 @@ class SingleProblemPage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar isLoggedIn={this.props.isLoggedIn}/>
         <div className="ui hidden divider"></div>
         <div className="ui raised container">
           <div className="content">

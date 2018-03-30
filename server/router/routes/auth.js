@@ -3,14 +3,25 @@
 module.exports = (app, db, passport) => {
   app.post('/signup',
     passport.authenticate('local-signup', {
-      successRedirect: '/',
-      failureRedirect: '/',
+      successRedirect: '/signupSuccess',
+      failureRedirect: '/signupFailed',
     })
   );
 
+  app.get('/signupSuccess', function(req, res) {
+    res.send(req.user.id);
+  });
+
+  app.get('/signupFailed', function(req, res) {
+    res.send('Username already taken');
+  });
+
+  app.get('/loginSuccess', function(req, res) {
+    res.send(req.user.id);
+  });
 
   app.get('/loginFailed', function(req, res) {
-    res.end('Incorrect username or password');
+    res.send('Incorrect username or password');
   });
 
   app.post('/login',
@@ -21,8 +32,8 @@ module.exports = (app, db, passport) => {
       return next();
     },
     passport.authenticate('local-login', {
-      successRedirect: '/',
-      failureRedirect: '/loginPage',
+      successRedirect: '/loginSuccess',
+      failureRedirect: '/loginFailed',
     })
   );
 

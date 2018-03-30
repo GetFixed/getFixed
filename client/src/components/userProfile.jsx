@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './navBar.jsx';
 import CategoryView from './categoryView.jsx';
-import request from 'superagent';
+import axios from 'axios'
 // import GoogleMap from './googleMap.jsx';
 
 class UserProfile extends React.Component {
@@ -13,9 +13,12 @@ class UserProfile extends React.Component {
   }
 
   componentWillMount() {
-    request
-      .get(`/user/${this.props.match.params.id}`)
-      .then(result => this.setState({ currentUser: result.body }));
+    var context = this;
+    axios.get(`/user/${this.props.user}`)
+      .then(function (response) {
+        console.log(response)
+        context.setState({currentUser: response.data})
+      })
   }
 
 
@@ -23,18 +26,17 @@ class UserProfile extends React.Component {
     return (
       <div>
         <NavBar />
-        <CategoryView />
         <div style={{paddingLeft: "4%", paddingTop: "2%"}}>
           <h2>{this.state.currentUser.username}</h2>
           <div>
             <div>
               Stars Image
             </div>
-            <span>{this.state.currentUser.avg_rating} </span>
-            <span>|          {this.state.currentUser.rating_count} Ratings</span>
+            <span>{this.state.currentUser.avg_rating || 'Unrated'} </span>
+            <span>{this.state.currentUser.rating_count || 'No Ratings Yet'}</span>
           </div>
           <div>
-            <h4>{this.state.currentUser.phone_number}</h4>
+            <h4>{this.state.currentUser.phone_number || 'No phone number'}</h4>
             <span><em>Serving area around {this.state.currentUser.city}, call for availability</em></span>
           </div>
         </div>

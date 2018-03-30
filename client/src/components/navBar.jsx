@@ -2,35 +2,74 @@ import React, { Component } from 'react';
 import { Input, Menu, Button} from 'semantic-ui-react';
 import FixButton from './fixButton.jsx';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 class Navbar extends React.Component {
     constructor(props) {
     super(props)
     this.state = {
-
        }
     this.handleClick = this.handleClick.bind(this);
 
   }
 
 
-    handleClick(e) {
-      axios.get('/logout')
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
+  handleClick(e) {
+    var context = this
+    axios.get('/logout')
+      .then(function (response) {
+        console.log(response);
+        context.props.onLogout();
+        context.props.history.push("/");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
 
 
   render() {
+    const dynamicNavbar = this.props.isLoggedIn ? (
+      <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header className="mdl-layout__header">
+        <div className="mdl-layout__header-row">
+          <Link to ='/landing'>
+          <span className="mdl-navigation__link"><h3>Get Fixed!</h3> </span>
+          </Link>
+          <div className="mdl-layout-spacer"></div>
+          <Input style={{width: "29vw",height: "35px"}} icon='search' placeholder='What are you looking for?' />
 
+          <nav className="mdl-navigation mdl-layout--large-screen-only">
+            <Link to ='/userProfile'>
+            <span className="mdl-navigation__link">Profile</span>
+            </Link>
+            <Link to ='/'>
+            <span onClick={this.handleClick} className="mdl-navigation__link">Logout</span>
+            </Link>
+            <span className="mdl-navigation__link"><FixButton /></span>
 
-    return (
+          </nav>
+        </div>
+      </header>
+      <div className="mdl-layout__drawer">
+        <span className="mdl-layout-title">Get Fixed!</span>
+        <nav className="mdl-navigation">
+          <span className="mdl-navigation__link" href=""><FixButton /></span>
+          <Link to ='/signUp'>
+          <span className="mdl-navigation__link" >Sign Up</span>
+          </Link>
+          <Link to ='/loginPage'>
+          <span className="mdl-navigation__link" >Login</span>
+          </Link>
+          <Link to ='/UserProfile'>
+          <span className="mdl-navigation__link" >My Account</span>
+          </Link>
+        </nav>
+      </div>
 
-    <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    </div>
+      ) : (
+      <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header className="mdl-layout__header">
         <div className="mdl-layout__header-row">
           <Link to ='/landing'>
@@ -68,7 +107,13 @@ class Navbar extends React.Component {
       </div>
 
     </div>
-        )
+      )
+
+    return (
+      <div>
+        {dynamicNavbar}
+        </div>
+      )
   }
 }
 

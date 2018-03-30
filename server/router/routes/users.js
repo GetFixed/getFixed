@@ -11,7 +11,7 @@ module.exports = (app, db) => {
     console.log('\n', user_id, '\n')
     db.users.findAll({
       where: {
-        num: user_id
+        id: user_id
       }
     })
     .then(user => {

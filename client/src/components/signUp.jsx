@@ -10,7 +10,8 @@ class Signup extends React.Component {
       username: '',
       password: '',
       email: '',
-      city: ''
+      city: '',
+      error: ''
     };
     this.handleClick = this.handleClick.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -30,7 +31,12 @@ class Signup extends React.Component {
       })
       .then(function (response) {
         console.log('signup success', response);
-        context.props.history.push("/");
+        if (response.data === 'Username already taken') {
+          context.setState({error: 'Username already taken'})
+        } else {
+          context.props.onLogin(response.data);
+          context.props.history.push("/");
+        }
       })
       .catch(function (error) {
         console.log('signup failed', error);
@@ -146,6 +152,7 @@ class Signup extends React.Component {
           <Message>
             <Link to ='/loginPage'>Already have an account? Sign in here. </Link>
           </Message>
+          {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
         </Grid.Column>
       </Grid>
     </div>
