@@ -63,6 +63,7 @@ class App extends React.Component {
               (props) => {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
+                  onLogout={this.onLogout}
                   />
                 }
               } />
@@ -72,6 +73,7 @@ class App extends React.Component {
               (props) => {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
+                  onLogout={this.onLogout}
                   />
                 }
               } />
@@ -90,6 +92,7 @@ class App extends React.Component {
               (props) => {
                 return <SingleProblemPage {...props}
                   isLoggedIn={this.state.isLoggedIn}
+                  onLogout={this.onLogout}
                   />
                 }
               } />
@@ -99,6 +102,7 @@ class App extends React.Component {
                 return <UserProfile {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   user={this.state.user}
+                  onLogout={this.onLogout}
                   />
                 }
               } />

@@ -29,7 +29,10 @@ class SingleProblemPage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar isLoggedIn={this.props.isLoggedIn}/>
+        <NavBar
+          isLoggedIn={this.props.isLoggedIn}
+          onLogout={this.props.onLogout}
+        />
         <div className="ui hidden divider"></div>
         <div className="ui raised container">
           <div className="content">

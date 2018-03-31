@@ -25,7 +25,10 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar
+          isLoggedIn={this.props.isLoggedIn}
+          onLogout={this.props.onLogout}
+        />
         <div style={{paddingLeft: "4%", paddingTop: "2%"}}>
           <h2>{this.state.currentUser.username}</h2>
           <div>
