@@ -33,14 +33,14 @@ class Landing extends React.Component {
       maximumAge: 0,
     };
 
-    navigator.geolocation.getCurrentPosition(this.geoLocationSuccess, this.geoLocationError, options); 
+    navigator.geolocation.getCurrentPosition(this.geoLocationSuccess, this.geoLocationError, options);
   }
 
   render() {
     return (
       <div>
         <div>
-          <Navbar />
+          <Navbar isLoggedIn={this.props.isLoggedIn}/>
         </div>
         <div className="ui hidden divider"></div>
         <div className="ui grid container">

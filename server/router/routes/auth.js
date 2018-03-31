@@ -25,8 +25,7 @@ module.exports = (app, db, passport) => {
     res.send('Incorrect username or password');
   });
 
-  app.post(
-'/login',
+  app.post('/login',
     (req, res, next) => {
       console.log('body', req.body);
       console.log('user', req.user);

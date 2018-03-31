@@ -55,12 +55,12 @@ class Navbar extends React.Component {
         <span className="mdl-layout-title">Get Fixed!</span>
         <nav className="mdl-navigation">
           <span className="mdl-navigation__link" href=""><FixButton /></span>
-          <Link to ='/signUp'>
-          <span className="mdl-navigation__link" >Sign Up</span>
-          </Link>
-          <Link to ='/loginPage'>
-          <span className="mdl-navigation__link" >Login</span>
-          </Link>
+            <Link to ='/userProfile'>
+            <span className="mdl-navigation__link">Profile</span>
+            </Link>
+            <Link to ='/'>
+            <span onClick={this.handleClick} className="mdl-navigation__link">Logout</span>
+            </Link>
           <Link to ='/UserProfile'>
           <span className="mdl-navigation__link" >My Account</span>
           </Link>
