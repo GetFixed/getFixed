@@ -3,6 +3,11 @@ require('dotenv').config();
 let seedData = require('./server/database/seedData');
 let Sequelize = require('sequelize');
 const config = require('./server/config.js');
+const bCrypt = require('bcrypt-nodejs');
+
+var generateHash = function (password) {
+  return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+};
 
 let sequelize = new Sequelize(
   'get_fixed',
@@ -30,7 +35,7 @@ function createUsers(quantity) {
   for (let i = 0; i <= quantity; i++) {
     const newEntry = {};
     newEntry.username = casual.username;
-    newEntry.password = casual.password;
+    newEntry.password = generateHash(123);
     newEntry.email = casual.email;
     newEntry.avg_rating = (Math.floor(Math.random() * 51) / 10).toString();
     newEntry.rating_count = casual.integer(from = 0, to = 100);

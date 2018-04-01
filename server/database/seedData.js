@@ -1,4 +1,4 @@
-npmconst users = [
+const users = [
   {
     num: '165a5baa-3846-4833-b19a-eba714077acf',
     username: 'Gkolb',
