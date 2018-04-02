@@ -27,10 +27,43 @@ class Navbar2 extends React.Component {
     }
 
     render(){
-      return (
+      let dynamicNavbar = this.props.isLoggedIn ? (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <Link to ='/landing'>
         <h2 className="navbar-brand">GetFixed</h2>
+      </Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            <Link to ='/personalProfile'>
+            <li className="nav-item active">
+              <a className="nav-link" href="#">Profile <span className="sr-only">(current)</span></a>
+            </li>
+            </Link>
+            <Link to='/'>
+              <li onClick={this.handleClick}className="nav-item">
+                <a className="nav-link" href="#">Logout</a>
+              </li>
+            </Link>
+            <li className="nav-item">
+              <FixButton
+                isLoggedIn={this.props.isLoggedIn}
+                user={this.props.user}
+                />
+            </li>
+          </ul>
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" />
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+        ) : (<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <Link to ='/landing'>
+        <a className="navbar-brand" href="#"><h3>GetFixed</h3></a>
       </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -49,7 +82,12 @@ class Navbar2 extends React.Component {
             </li>
             </Link>
             <li className="nav-item">
-              <FixButton />
+            <Link to='loginPage'>
+              <FixButton
+                isLoggedIn={this.props.isLoggedIn}
+                user={this.props.user}
+                />
+            </Link>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
@@ -57,8 +95,13 @@ class Navbar2 extends React.Component {
             <button className="btn btn-secondary" type="submit">Search</button>
           </form>
         </div>
-      </nav>
-        );
+      </nav>);
+
+    return (
+      <div>
+        {dynamicNavbar}
+      </div>
+      )
     }
 }
 

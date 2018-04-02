@@ -4,6 +4,7 @@ import CategoryView from './categoryView.jsx';
 import axios from 'axios'
 import { Card } from 'semantic-ui-react';
 import Problem from './problem.jsx';
+import NavBar2 from './navBar2.jsx';
 // import GoogleMap from './googleMap.jsx';
 
 class UserProfile extends React.Component {
@@ -34,7 +35,7 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
-        <NavBar
+        <NavBar2
           isLoggedIn={this.props.isLoggedIn}
           onLogout={this.props.onLogout}
           user={this.props.user}

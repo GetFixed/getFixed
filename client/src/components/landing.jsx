@@ -42,7 +42,11 @@ class Landing extends React.Component {
     return (
       <div>
         <div>
-          <Navbar2 />
+          <Navbar2
+            isLoggedIn={this.props.isLoggedIn}
+            onLogout={this.props.onLogout}
+            user={this.props.user}
+          />
 
 
           {/*<Navbar

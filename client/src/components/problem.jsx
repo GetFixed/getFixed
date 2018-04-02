@@ -18,7 +18,6 @@ const Problem = ({userId, problem}) => (
     `} variables={{userId}}
   >
     {({ loading, error, data }) => {
-      console.log(data)
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
