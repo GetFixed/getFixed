@@ -40,13 +40,13 @@ class Navbar extends React.Component {
           <Input style={{width: "29vw",height: "35px"}} icon='search' placeholder='What are you looking for?' />
 
           <nav className="mdl-navigation mdl-layout--large-screen-only">
-            <Link to ='/userProfile'>
+            <Link to ='/personalProfile'>
             <span className="mdl-navigation__link">Profile</span>
             </Link>
             <Link to ='/'>
             <span onClick={this.handleClick} className="mdl-navigation__link">Logout</span>
             </Link>
-            <span className="mdl-navigation__link"><FixButton /></span>
+            <span className="mdl-navigation__link"><FixButton isLoggedIn={this.props.isLoggedIn} user={this.props.user}/></span>
 
           </nav>
         </div>
@@ -54,8 +54,8 @@ class Navbar extends React.Component {
       <div className="mdl-layout__drawer">
         <span className="mdl-layout-title">Get Fixed!</span>
         <nav className="mdl-navigation">
-          <span className="mdl-navigation__link" href=""><FixButton /></span>
-            <Link to ='/userProfile'>
+          <span className="mdl-navigation__link" href=""><FixButton isLoggedIn={this.props.isLoggedIn} user={this.props.user}/></span>
+            <Link to ='/personalProfile'>
             <span className="mdl-navigation__link">Profile</span>
             </Link>
             <Link to ='/'>
@@ -85,7 +85,7 @@ class Navbar extends React.Component {
             <Link to ='/loginPage'>
             <span className="mdl-navigation__link">Login</span>
             </Link>
-            <span className="mdl-navigation__link"><FixButton /></span>
+            <span className="mdl-navigation__link"><Link to='loginPage'><FixButton isLoggedIn={this.props.isLoggedIn}/></Link></span>
 
           </nav>
         </div>
@@ -93,7 +93,7 @@ class Navbar extends React.Component {
       <div className="mdl-layout__drawer">
         <span className="mdl-layout-title">Get Fixed!</span>
         <nav className="mdl-navigation">
-          <span className="mdl-navigation__link" href=""><FixButton /></span>
+          <span className="mdl-navigation__link" href=""><FixButton isLoggedIn={this.props.isLoggedIn}/></span>
           <Link to ='/signUp'>
           <span className="mdl-navigation__link" >Sign Up</span>
           </Link>

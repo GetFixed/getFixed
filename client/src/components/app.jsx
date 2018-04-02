@@ -6,6 +6,7 @@ import SingleProblemPage from './singleProblemPage.jsx'
 import ViewConversation from './viewConversation.jsx'
 import Signup from './signup.jsx'
 import UserProfile from './userProfile.jsx'
+import PersonalProfile from './personalProfile.jsx'
 
 
 class App extends React.Component {
@@ -45,6 +46,7 @@ class App extends React.Component {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   onLogout={this.onLogout}
+                  user={this.state.user}
                   />
                 }
               } />
@@ -64,6 +66,7 @@ class App extends React.Component {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   onLogout={this.onLogout}
+                  user={this.state.user}
                   />
                 }
               } />
@@ -74,6 +77,7 @@ class App extends React.Component {
                 return <Landing {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   onLogout={this.onLogout}
+                  user={this.state.user}
                   />
                 }
               } />
@@ -93,10 +97,22 @@ class App extends React.Component {
                 return <SingleProblemPage {...props}
                   isLoggedIn={this.state.isLoggedIn}
                   onLogout={this.onLogout}
+                  user={this.state.user}
                   />
                 }
               } />
-          <Route path='/userProfile'
+          <Route path='/personalProfile'
+            render={
+              (props) => {
+                return <PersonalProfile {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  user={this.state.user}
+                  onLogout={this.onLogout}
+                  />
+                }
+              } />
+            />
+           <Route path='/userProfile'
             render={
               (props) => {
                 return <UserProfile {...props}

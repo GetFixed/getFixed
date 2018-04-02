@@ -25,6 +25,24 @@ module.exports = (app, db) => {
       });
   });
 
+  app.get('/listings/:user_id', (req, res) => {
+    const user_id = req.params.user_id;
+    console.log(user_id);
+    db.listings.findAll({
+      where: {
+        user_id: user_id,
+      },
+    })
+      .then((listings) => {
+        res.status(200)
+          .send(listings);
+      })
+      .catch((err) => {
+        res.status(400)
+          .send();
+      });
+  });
+
   app.post('/listing', (req, res) => {
     const listing = req.body;
     console.log('listing', listing);

@@ -6,7 +6,7 @@ import { Card } from 'semantic-ui-react';
 import Problem from './problem.jsx';
 // import GoogleMap from './googleMap.jsx';
 
-class UserProfile extends React.Component {
+class PersonalProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,13 +17,12 @@ class UserProfile extends React.Component {
 
   componentWillMount() {
     var context = this;
-    var user_id =  this.props.location.pathname.split('/')[2];
-    console.log(user_id)
-    axios.get(`/user/${user_id}`)
+    axios.get(`/user/${this.props.user}`)
       .then(function (response) {
         console.log(response)
         context.setState({currentUser: response.data})
-        return axios.get(`/listings/${user_id}`)
+
+        return axios.get(`/listings/${context.state.currentUser.id}`)
       })
       .then((response) => {
         context.setState({listings: response.data})
@@ -70,4 +69,4 @@ class UserProfile extends React.Component {
 
 }
 
-export default UserProfile;
+export default PersonalProfile;

@@ -42,9 +42,14 @@ class Landing extends React.Component {
     return (
       <div>
         <div>
-          <Navbar2
+          <Navbar2 />
 
-            />
+
+          {/*<Navbar
+            isLoggedIn={this.props.isLoggedIn}
+            onLogout={this.props.onLogout}
+            user={this.props.user}
+            />*/}
         </div>
         <div className="ui hidden divider"></div>
         <div className="ui grid container">
