@@ -46,6 +46,8 @@ function createUsers(quantity) {
   return users;
 }
 
+
+
 const images = [
   'https://i.ytimg.com/vi/_10j1Xvl_wY/hqdefault.jpg',
   'https://images-na.ssl-images-amazon.com/images/I/41QTVzKddGL._US500_.jpg',
@@ -127,220 +129,220 @@ const cities = [
 
 const coordinates = {
   'San Francisco': {
-    latitude: 37.7749,
-    longitude: -122.4194,
+    type: 'Point',
+    coordinates: [37.7749, -122.4194],
   },
   'Los Angeles': {
-    latitude: 34.0522,
-    longitude: -118.2437,
+    type: 'Point',
+    coordinates: [34.0522, -118.2437],
   },
   'Fullerton': {
-    latitude: 34.0522,
-    longitude: -117.9242,
+    type: 'Point',
+    coordinates: [33.8704, -117.9242],
   },
   'Pasadena': {
-    latitude: 34.1478,
-    longitude: -118.1445,
+    type: 'Point',
+    coordinates: [34.1478, -118.1445],
   },
   'Orange': {
-    latitude: 33.7879,
-    longitude: -117.8531,
+    type: 'Point',
+    coordinates: [33.7879, -117.8531],
   },
   'Torrance': {
-    latitude: 33.8358,
-    longitude: -118.3406,
+    type: 'Point',
+    coordinates: [33.8358, -118.3406],
   },
   'Escondido': {
-    latitude: 33.1192,
-    longitude: -117.0864,
+    type: 'Point',
+    coordinates: [33.1192, -117.0864],
   },
   'Sunnyvale': {
-    latitude: 37.3688,
-    longitude: -122.0363,
+    type: 'Point',
+    coordinates: [37.3688, -122.0363],
   },
   'Pomona': {
-    latitude: 34.0551,
-    longitude: -117.7500,
+    type: 'Point',
+    coordinates: [34.0551, -117.7500],
   },
   'Salinas': {
-    latitude: 36.6777,
-    longitude: -121.6555,
+    type: 'Point',
+    coordinates: [36.6777, -121.6555],
   },
   'Hayward': {
-    latitude: 37.6688,
-    longitude: -122.0808,
+    type: 'Point',
+    coordinates: [37.6688, -122.0808],
   },
   'Palmdale': {
-    latitude: 34.5794,
-    longitude: -118.1165,
+    type: 'Point',
+    coordinates: [34.5794, -118.1165],
   },
   'Lancaster': {
-    latitude: 34.6868,
-    longitude: -118.1542,
+    type: 'Point',
+    coordinates: [34.6868, -118.1542],
   },
   'Corona': {
-    latitude: 33.8753,
-    longitude: -117.5664,
+    type: 'Point',
+    coordinates: [33.8753, -117.5664],
   },
   'Elk Grove': {
-    latitude: 38.4088,
-    longitude: -121.3716,
+    type: 'Point',
+    coordinates: [38.4088, -121.3716],
   },
   'Ontario': {
-    latitude: 34.0633,
-    longitude: -117.6509,
+    type: 'Point',
+    coordinates: [34.0633, -117.6509],
   },
   'Santa Rosa': {
-    latitude: 38.4404,
-    longitude: -122.7141,
+    type: 'Point',
+    coordinates: [38.4404, -122.7141],
   },
   'Garden Grove': {
-    latitude: 33.7743,
-    longitude: -117.9380,
+    type: 'Point',
+    coordinates: [33.7743, -117.9380],
   },
   'Oceanside': {
-    latitude: 33.1959,
-    longitude: -117.3795,
+    type: 'Point',
+    coordinates: [33.1959, -117.3795],
   },
   'Santa Clarita': {
-    latitude: 34.3917,
-    longitude: -118.5426,
+    type: 'Point',
+    coordinates: [34.3917, -118.5426],
   },
   'Glendale': {
-    latitude: 34.1425,
-    longitude: -118.2551,
+    type: 'Point',
+    coordinates: [34.1425, -118.2551],
   },
   'Huntington Beach': {
-    latitude: 33.6595,
-    longitude: -117.9988,
+    type: 'Point',
+    coordinates: [33.6595, -117.9988],
   },
   'Moreno Valley': {
-    latitude: 33.9425,
-    longitude: -117.2297,
+    type: 'Point',
+    coordinates: [33.9425, -117.2297],
   },
   'Oxnard': {
-    latitude: 34.1975,
-    longitude: -119.1771,
+    type: 'Point',
+    coordinates: [34.1975, -119.1771],
   },
   'Fontana': {
-    latitude: 34.0922,
-    longitude: -117.4350,
+    type: 'Point',
+    coordinates: [34.0922, -117.4350],
   },
   'Modesto': {
-    latitude: 37.6391,
-    longitude: -120.9969,
+    type: 'Point',
+    coordinates: [37.6391, -120.9969],
   },
   'San Bernadino': {
-    latitude: 34.1083,
-    longitude: -117.2898,
+    type: 'Point',
+    coordinates: [34.1083, -117.2898],
   },
   'Fremont': {
-    latitude: 37.5483,
-    longitude: -121.9886,
+    type: 'Point',
+    coordinates: [37.5483, -121.9886],
   },
   'Chula Vista': {
-    latitude: 32.6401,
-    longitude: -117.0842,
+    type: 'Point',
+    coordinates: [32.6401, -117.0842],
   },
   'Stockton': {
-    latitude: 37.9577,
-    longitude: -121.2908,
+    type: 'Point',
+    coordinates: [37.9577, -121.2908],
   },
   'Santa Ana': {
-    latitude: 33.7455,
-    longitude: -117.8677,
+    type: 'Point',
+    coordinates: [33.7455, -117.8677],
   },
   'Anaheim': {
-    latitude: 33.8366,
-    longitude: -117.9143,
+    type: 'Point',
+    coordinates: [33.8366, -117.9143],
   },
   'Oakland': {
-    latitude: 37.8044,
-    longitude: -122.2711,
+    type: 'Point',
+    coordinates: [37.8044, -122.2711],
   },
   'Long Beach': {
-    latitude: 33.7701,
-    longitude: -118.1937,
+    type: 'Point',
+    coordinates: [33.7701, -118.1937],
   },
   'Fresno': {
-    latitude: 36.7378,
-    longitude: -119.7871,
+    type: 'Point',
+    coordinates: [36.7378, -119.7871],
   },
   'Venice': {
-    latitude: 33.9850,
-    longitude: -118.4695,
+    type: 'Point',
+    coordinates: [33.9850, -118.4695],
   },
   'Van Nuys': {
-    latitude: 34.1899,
-    longitude: -118.4514,
+    type: 'Point',
+    coordinates: [34.1899, -118.4514],
   },
   'Santa Monica': {
-    latitude: 34.0195,
-    longitude: -118.4912,
+    type: 'Point',
+    coordinates: [34.0195, -118.4912],
   },
   'Monterrey': {
-    latitude: 36.6002,
-    longitude: -121.8947,
+    type: 'Point',
+    coordinates: [36.6002, -121.8947],
   },
   'Santa Barbara': {
-    latitude: 34.4208,
-    longitude: -119.6982,
+    type: 'Point',
+    coordinates: [34.4208, -119.6982],
   },
   'Santa Cruz': {
-    latitude: 36.9741,
-    longitude: -122.0308,
+    type: 'Point',
+    coordinates: [36.9741, -122.0308],
   },
   'San Jose': {
-    latitude: 37.3382,
-    longitude: -121.8863,
+    type: 'Point',
+    coordinates: [37.3382, -121.8863],
   },
   'Bakersville': {
-    latitude: 35.3733,
-    longitude: -119.0187,
+    type: 'Point',
+    coordinates: [35.3733, -119.0187],
   },
   'Roseville': {
-    latitude: 38.7521,
-    longitude: -121.2880,
+    type: 'Point',
+    coordinates: [38.7521, -121.2880],
   },
   'Redlands': {
-    latitude: 34.0556,
-    longitude: -117.1825,
+    type: 'Point',
+    coordinates: [34.0556, -117.1825],
   },
   'Riverside': {
-    latitude: 33.9806,
-    longitude: -117.3755,
+    type: 'Point',
+    coordinates: [33.9806, -117.3755],
   },
   'Irvine': {
-    latitude: 33.6846,
-    longitude: -117.8265,
+    type: 'Point',
+    coordinates: [33.6846, -117.8265],
   },
   'San Diego': {
-    latitude: 32.7157,
-    longitude: -117.1611,
+    type: 'Point',
+    coordinates: [32.7157, -117.1611],
   },
   'Eureka': {
-    latitude: 40.8021,
-    longitude: -124.1637,
+    type: 'Point',
+    coordinates: [40.8021, -124.1637],
   },
   'Sacramento': {
-    latitude: 38.5816,
-    longitude: -121.4944,
+    type: 'Point',
+    coordinates: [38.5816, -121.4944],
   },
 }
 
 function createListing(userID) {
   // let listings = [];
   // for (var i = 0; i <= quantity; i++) {
+  let problem = seedData.listings[Math.floor((Math.random() * 16))];
   let newEntry = {};
   newEntry.user_id = userID;
-  newEntry.title = casual.short_description;
-  newEntry.description = casual.short_description;
-  newEntry.category = categories[Math.floor((Math.random() * 9))];
+  newEntry.title = problem.title;
+  newEntry.description = problem.description;
+  newEntry.category = problem.category;
   newEntry.location = cities[Math.floor(Math.random() * 51)];
-  newEntry.image = images[Math.floor((Math.random() * 12))];
-  newEntry.latitude = coordinates[newEntry.location].latitude;
-  newEntry.longitude = coordinates[newEntry.location].longitude;
-  // listings.push(newEntry);
+  newEntry.image = problem.image;
+  newEntry.point = coordinates[newEntry.location];
+  listings.push(newEntry);
   // }
   return newEntry;
 }
@@ -365,18 +367,18 @@ users.forEach((user) => {
       let newListing = createListing(listing.user_id);
       return db.listings.create(newListing);
     })
-    // .then(function() {
-    //   console.log(listings[0].point);
-    // })
-    // .then(function() {
-    //   sequelize.close();
-    // })
+    .then(function() {
+      console.log(listings[0].point);
+    })
+    .then(function() {
+      sequelize.close();
+    })
     .catch(function(err) {
       console.error(err);
       sequelize.close();
     });
 });
-
+console.log(seedData.listings.length)
 // listings.forEach(function(listing) {
 //   db.sequelize.sync({force:true})
 //     .then(function() {

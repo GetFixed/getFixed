@@ -121,6 +121,16 @@ const users = [
   },
 ];
 
+const categories = [
+  'electronics',
+  'automotive',
+  'handyman',
+  'computers',
+  'general labour',
+  'specialty',
+  'electrician',
+  'free stuff',
+];
 const listings = [
   {
     user_id: '165a5baa-3846-4833-b19a-eba714077acf',
@@ -135,7 +145,7 @@ const listings = [
     title: 'Slow computer',
     description:
       "I could really use some help upgrading my computer. I don't want to spend an arm and a leg",
-    category: 'computer skills',
+    category: 'computers',
     location: 'Vancouver',
     image:
       'https://cdn.theatlantic.com/assets/media/img/mt/2017/09/ComputerLyfe/lead_960.jpg?1505404125',
@@ -193,7 +203,7 @@ const listings = [
     title: 'Ripe oranges!',
     description:
       'Our house has two dozen citrus trees that are ready to be picked. We could use some help bringing in the harvest.',
-    category: 'labour',
+    category: 'handyman',
     location: 'Orange County',
     image: 'https://www.gardenzeus.com/wp-content/uploads/GZctorange-2.jpg',
   },
@@ -221,7 +231,7 @@ const listings = [
     title: 'Fallen tree',
     description:
       'A tall tree fell in my yard. I need someone to cut it up and haul it off.',
-    category: 'labour',
+    category: 'handyman',
     location: 'Santa Fe',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxYDDNE7-lXvMuHLo4lB_h49v6GQBJwr2zhBhKFREtxeyzB597lA',
@@ -230,8 +240,8 @@ const listings = [
     user_id: 'b8a94c56-7adc-44cb-87f3-d816042681b4',
     title: 'Broken watch',
     description:
-      'Needs new hands and battery. The glass is also broken, so if you can help with that it would be great.',
-    category: 'stuff',
+      'Pretty much non functional but if you want it you can have it',
+    category: 'free stuff',
     location: 'San Diego',
     image:
       'https://www.brainline.org/sites/default/files/styles/full_view_image/public/migrated//IMG_2553.jpg?itok=Dbht9Iwj',
@@ -241,7 +251,7 @@ const listings = [
     title: 'Glasses frames falling apart',
     description:
       "I broke the arm on the frame of my glasses. It just needs to be reattached, but I don't have the tools.",
-    category: 'stuff',
+    category: 'free stuff',
     location: 'Houston',
     image:
       'https://i.pinimg.com/736x/e5/52/ef/e552ef43b440f1374f196da4f26fc5b1--optical-eyewear-nerd-girls.jpg',
@@ -260,8 +270,8 @@ const listings = [
     user_id: 'fe2db660-f092-434d-bb7f-7b192620dcc1',
     title: 'Space heater not hot',
     description:
-      'Space heater just gets warm, not entirely hot. I think there may be a problem with the wiring.',
-    category: 'stuff',
+      "If you want a space heater that can keep your house the same temp as outside then you have found what you're looking for",
+    category: 'free stuff',
     location: 'Houston',
     image:
       'https://mobileimages.lowes.com/product/converted/693759/6937590200395.jpg',
