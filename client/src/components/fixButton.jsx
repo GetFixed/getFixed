@@ -19,7 +19,7 @@ class FixButton extends React.Component {
   // }
 
   closeMainModal() {
-    this.setState({ modalOpen: false })
+    this.setState({ modalOpen: false, open:false })
   }
 
   render() {
