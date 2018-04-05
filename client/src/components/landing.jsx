@@ -97,9 +97,9 @@ class Landing extends React.Component {
             />
           </div>
         </div>
-          <div className="ui hidden divider"></div>
+          <br />
+
           <Footer />
-        <br />
       </div>
     );
   }

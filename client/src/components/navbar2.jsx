@@ -66,7 +66,7 @@ class Navbar2 extends React.Component {
       </nav>
         ) : (<nav className="navbar navbar-expand-md navbar-dark bg-primary">
       <Link to ='/landing'>
-        <span className="navbar-brand" href="#"><h3>GetFixed</h3></span>
+        <span className="navbar-brand"><h3>GetFixed</h3></span>
       </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
