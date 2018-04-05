@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 
-
 class CategoryView extends React.Component {
   constructor(props) {
     super(props);
@@ -32,6 +31,7 @@ class CategoryView extends React.Component {
           <Button color='teal'>Specialty</Button>
           <Button color='purple'>Electronics</Button>
           <Button color='grey'>Free Stuff</Button>
+          <Button disabled color='orange'>Find Problems Near You!</Button>
         </div>
         </Button.Group>
       </div>

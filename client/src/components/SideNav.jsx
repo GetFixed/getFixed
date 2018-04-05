@@ -11,29 +11,15 @@ import CategoryView from './categoryView.jsx';
 
 
 export default class SideNav extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state = {open: false};
-  }
-
-  handleToggle (){
-    this.setState({open: !this.state.open})
-  }
-
-  getUsersLocation() {
-    this.setState({ buttonClicked: true });
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 3000,
-      maximumAge: Infinity,
+    this.state = {
+      open: false,
     };
-    // console.log(1);
-    if (navigator.geolocation) {
-      navigator
-        .geolocation
-        .getCurrentPosition(this.geoLocationSuccess, this.geoLocationError, options);
-    }
+  }
+
+  handleToggle () {
+    this.setState({ open: !this.state.open })
   }
 
   render() {
@@ -45,23 +31,16 @@ export default class SideNav extends React.Component {
           <i className="material-icons">add</i>
           </button>
         <Drawer width={140} open={this.state.open}>
-          <div style={{ padding:" 250px 0px 0px 15px", align:'left' }}>
+          <div style={{ padding: '150px 0px 0px 15px', align: 'left' }}>
             <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
           label="Filter"
           onClick={() => this.handleToggle()}>
           <i className="material-icons">keyboard_return</i>
           </button>
           </div>
-          <div style={{ padding:" 15px 0px 0px 1px", align:'left' }}>
+          <div style={{ padding: '15px 0px 0px 1px', align: 'left' }}>
             <CategoryView history={history} />
-            <DistanceSlideBar />
-            <button
-              onClick={this.getUsersLocation}
-              style={{ marginBottom: '1%' }}
-              onClick={() => this.handleToggle()}
-            >
-              Filter
-            </button>
+            <DistanceSlideBar handleSlide={this.props.handleSlide} />
             <FixButton />
           </div>
         </Drawer>

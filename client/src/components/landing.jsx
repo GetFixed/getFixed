@@ -13,11 +13,10 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      latitude: null,
-      longitude: null,
+      latitude: 37.2113,
+      longitude: -121.8379,
       modalOpen: false,
       distance: 200,
-      buttonClicked: false,
     };
     this.geoLocationSuccess = this.geoLocationSuccess.bind(this);
     this.handleSlide = this.handleSlide.bind(this);
@@ -36,26 +35,30 @@ class Landing extends React.Component {
   geoLocationError() {
     axios.get('/ip')
       .then((response) => {
-        this.setState({
-          latitude: response.data.latitude,
-          longitude: response.data.longitude,
-        });
+        if (response.data.latitude) {
+          this.setState({
+            latitude: response.data.latitude,
+            longitude: response.data.longitude,
+          });
+        }
       });
   }
 
   getUsersLocation() {
-    this.setState({ buttonClicked: true });
     const options = {
       enableHighAccuracy: true,
       timeout: 3000,
       maximumAge: Infinity,
     };
-    // console.log(1);
     if (navigator.geolocation) {
       navigator
         .geolocation
         .getCurrentPosition(this.geoLocationSuccess, this.geoLocationError, options);
     }
+  }
+
+  componentDidMount() {
+    this.getUsersLocation();
   }
 
   handleSlide(miles) {
@@ -73,19 +76,6 @@ class Landing extends React.Component {
           />
         </div>
         <div className="ui hidden divider"></div>
-        <div style={{ marginLeft: '14%', marginTop: '1%' }}>
-          {
-          !this.state.buttonClicked ?
-          <Button
-            onClick={this.getUsersLocation}
-            // style={{ marginBottom: '2%' }}
-            color='purple'
-          >
-            Click Here To Find Problems Near You!
-          </Button> :
-          <DistanceSlideBar handleSlide={this.handleSlide}/>
-          }
-        </div>
         <div
           className="sixteen wide column"
           style={{ padding:" 35px 0 0px 120px" }}
@@ -95,7 +85,10 @@ class Landing extends React.Component {
             className="fixed-top"
             style={{ padding:" 250px 10px 180px 15px", width:"12vw" }}
           >
-            <SideNav history={history} />
+            <SideNav
+              history={history}
+              handleSlide={this.handleSlide}
+            />
           </div>
             <ProblemsView
               category={this.props.match.params.category}
