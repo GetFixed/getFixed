@@ -13,9 +13,7 @@ import CategoryView from './categoryView.jsx';
 export default class SideNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      open: false,
-    };
+    this.state = { open: false };
   }
 
   handleToggle () {
