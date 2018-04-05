@@ -7,8 +7,6 @@ import gql from 'graphql-tag';
 import ChatBoxWithMessages from './chatBoxArea.jsx';
 import SocialMedia from './socialMediaIcons.jsx'
 import Footer from './footer.jsx'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import { Button } from 'semantic-ui-react'
 
 
 class SingleProblemPage extends React.Component {
@@ -16,7 +14,6 @@ class SingleProblemPage extends React.Component {
     super(props);
     this.state = {
       currentProblem: {},
-      expanded: false,
     }
   }
 
@@ -39,29 +36,28 @@ class SingleProblemPage extends React.Component {
           isLoggedIn={this.props.isLoggedIn}
           onLogout={this.props.onLogout}
         />
-      <div className="container"style={{position:'center'}}>
-        <Card>
-    <CardHeader
-      title={this.props.match.params.username}
-
-      avatar="https://specials-images.forbesimg.com/imageserve/5a8d920d31358e4955adf197/416x416.jpg?background=000000&cropX1=755&cropX2=2357&cropY1=494&cropY2=2097"
-    />
-    <img
-        src={this.state.currentProblem.image}
-        style={{width:'60vw',height:'40vh'}}
-      />
-    <CardTitle title={this.state.currentProblem.description}subtitle={this.state.currentProblem.description} />
-    <CardText>
-      Share this Listing.
-    </CardText>
-    <CardActions>
-    <Button circular color='red' icon='empty heart' />
-    <Button circular color='pinterest' icon='pinterest' />
-    <Button circular color='facebook' icon='facebook' />
-    <Button circular color='twitter' icon='twitter' />
-    <Button circular color='instagram' icon='instagram' />
-    </CardActions>
-  </Card>
+        <div className="ui hidden divider"></div>
+        <div className="ui raised container">
+          <div className="content">
+            <div className="ui header"></div>
+          </div>
+          <a className="ui red ribbon label">{this.props.match.params.username}</a>
+          <div className="ui segment">
+            <img className="ui large image" style={{"display": "inline-block", width: '40vw', height: '40vw',}} src={this.state.currentProblem.image}/>
+            <div className="ui card" style={{"display": "inline-block", "margin":15}}>
+            <h2>{this.state.currentProblem.title}</h2>
+              <ChatBoxWithMessages  id={this.props.match.params.id}/>
+              <h5>Share this Listing</h5>
+              <SocialMedia />
+            </div>
+          </div>
+          <div className="ui card">
+            <div className="content description">
+              <h4 className="ui sub header">Problem Description:</h4>
+              <p>{this.state.currentProblem.description}</p>
+            </div>
+          </div>
+        </div>
         <div className="fixed-bottom" style={{ padding:" 0px 20px 20px 20px"}}>
           <Link to ='/landing'>
           <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
@@ -73,7 +69,6 @@ class SingleProblemPage extends React.Component {
         </div>
         <Footer />
 
-      </div>
       </div>
     )
   }
