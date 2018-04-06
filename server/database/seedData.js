@@ -133,16 +133,28 @@ const categories = [
 ];
 const listings = [
   {
+    title: 'Quarry workers needed. Top notch healthcare benefits.',
+    description: 'Environmentally friendly company, no machines that emit greenhouse gasses are used. 100% human powered projects.',
+    category: 'general labour',
+    image: 'https://res.cloudinary.com/dwid55cj4/image/upload/v1522971391/aohvbvjral7quym1cewc.png',
+  },
+  {
+    title: 'Pipe burst, I wanna save some money and try to fix it myself.',
+    description: 'Small leak coming from the basement of my house and I need someone with experience to help guide me through fixing it',
+    category: 'handyman',
+    image: 'https://res.cloudinary.com/dwid55cj4/image/upload/v1522964049/xhkzeybcjvqs4tw18zo1.png',
+  },
+  {
     user_id: '165a5baa-3846-4833-b19a-eba714077acf',
-    title: 'Broken Car',
+    title: 'Got into a small fender bender, need help fixing my car.',
     description: 'My car is broken halp me',
-    category: 'Automotive',
+    category: 'automotive',
     location: 'Denver',
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Car_crash_2.jpg',
   },
   {
     user_id: '1406b551-995d-4cba-8734-28a50a4e9f1a',
-    title: 'Slow computer',
+    title: "Just bought a new VR headset but it's not working as advertised",
     description:
       "I could really use some help upgrading my computer. I don't want to spend an arm and a leg",
     category: 'computers',
@@ -152,7 +164,7 @@ const listings = [
   },
   {
     user_id: '1406b551-995d-4cba-8734-28a50a4e9f1a',
-    title: 'Sodastream fountain',
+    title: 'My water bubbler is broke.',
     description: 'There seems to be some kind of leak',
     category: 'specialty',
     location: 'Los Angeles',
@@ -161,7 +173,7 @@ const listings = [
   },
   {
     user_id: '17682716-7c8c-4130-a8c2-692c878110ca',
-    title: 'Lawnmower oil leak',
+    title: "Lawnmower died and i'm not sure how to recharge. It didn't come with any cords",
     description:
       "My lawnmower leaks oil. I'm not sure if it's from a hose or something else.",
     category: 'automotive',
@@ -170,7 +182,7 @@ const listings = [
   },
   {
     user_id: '17682716-7c8c-4130-a8c2-692c878110ca',
-    title: 'Hair dryer short cycle',
+    title: 'Vacuum cleaner air flows the wrong way, it just makes more of a mess.',
     description:
       "It works for a moment and then shuts off. It doesn't even get very hot.",
     category: 'specialty',
@@ -180,9 +192,9 @@ const listings = [
   },
   {
     user_id: '2baf363a-8285-4d83-92ba-8f5a22bba152',
-    title: 'Mixer',
+    title: 'Not sure what I just bought but I want to learn how to use it.',
     description:
-      "I'm a DJ and I have an old Pioneer mixer that I don't want to throw away. Some of the lights don't work, and two output jacks need to be replaced",
+      "I'm a DJ and but I want to be.",
     category: 'electronics',
     location: 'Phoenix',
     image:
@@ -196,20 +208,20 @@ const listings = [
     category: 'handyman',
     location: 'El Paso',
     image:
-      'https://fthmb.tqn.com/224yIyX6TLrll6puKQHXfH5pFnY=/960x0/filters:no_upscale()/closed-door-of-a-garage-121527652-588bd1fe5f9b5874eebc8919.jpg',
+      'https://res.cloudinary.com/dwid55cj4/image/upload/v1522966472/qucz6sbodpq9bjqe9wwp.png',
   },
   {
     user_id: '55bd721d-10c3-4cb8-988f-062780b160a7',
-    title: 'Ripe oranges!',
+    title: 'Help needed to pick 200,000+ ripe oranges. I will let you keep 5',
     description:
       'Our house has two dozen citrus trees that are ready to be picked. We could use some help bringing in the harvest.',
-    category: 'handyman',
+    category: 'general labour',
     location: 'Orange County',
     image: 'https://www.gardenzeus.com/wp-content/uploads/GZctorange-2.jpg',
   },
   {
     user_id: '682caa79-9313-40fe-ac7a-538aeb4891ba',
-    title: 'Oil change needed',
+    title: 'Oil change needed for my 2005 Toyota Camry',
     description:
       "I think it's time to change the oil in my car. It's a 2005 Toyota Camry.",
     category: 'automotive',
@@ -219,7 +231,7 @@ const listings = [
   },
   {
     user_id: '7176e0e6-864e-45cb-a947-80bf2ae53ea6',
-    title: 'Refrigerator - needs coolant?',
+    title: "Refrigerator doesn't keep food cold when I leave the doors open, please help",
     description: 'Have an old fridge. Needs coolant.',
     category: 'handyman',
     location: 'Chicago',
@@ -228,7 +240,7 @@ const listings = [
   },
   {
     user_id: 'a8db40c5-e107-4d9d-a3c2-3743cc1fb066',
-    title: 'Fallen tree',
+    title: 'Found this sideways tree in my yard yesterday. Want it removed ASAP.',
     description:
       'A tall tree fell in my yard. I need someone to cut it up and haul it off.',
     category: 'handyman',
@@ -238,7 +250,7 @@ const listings = [
   },
   {
     user_id: 'b8a94c56-7adc-44cb-87f3-d816042681b4',
-    title: 'Broken watch',
+    title: 'Pretty much non functional broken watch but if you want it you can have it.',
     description:
       'Pretty much non functional but if you want it you can have it',
     category: 'free stuff',
@@ -248,17 +260,17 @@ const listings = [
   },
   {
     user_id: 'ccd32131-9509-4a51-894d-fe481bbbd474',
-    title: 'Glasses frames falling apart',
+    title: 'Glasses frame falling apart',
     description:
       "I broke the arm on the frame of my glasses. It just needs to be reattached, but I don't have the tools.",
-    category: 'free stuff',
+    category: 'specialty',
     location: 'Houston',
     image:
-      'https://i.pinimg.com/736x/e5/52/ef/e552ef43b440f1374f196da4f26fc5b1--optical-eyewear-nerd-girls.jpg',
+      'https://res.cloudinary.com/dwid55cj4/image/upload/v1522965874/tl1xqeblffm1ghrznye5.png',
   },
   {
     user_id: 'dee11b83-449e-400c-8435-7066d7f6cf40',
-    title: 'Torn sweatshirt',
+    title: 'Small tear in jacket, seems like a really easy fix but I have no experience.',
     description:
       "My hoodie has a tear just under the hood. I'm looking for someone to sew it up for me",
     category: 'specialty',

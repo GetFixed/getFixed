@@ -329,11 +329,14 @@ const coordinates = {
     coordinates: [38.5816, -121.4944],
   },
 }
+var uniqueUsers= [{
 
+},
+]
 function createListing(userID) {
   // let listings = [];
   // for (var i = 0; i <= quantity; i++) {
-  let problem = seedData.listings[Math.floor((Math.random() * 16))];
+  let problem = seedData.listings[Math.floor((Math.random() * seedData.listings.length))];
   let newEntry = {};
   newEntry.user_id = userID;
   newEntry.title = problem.title;
@@ -342,12 +345,14 @@ function createListing(userID) {
   newEntry.location = cities[Math.floor(Math.random() * 51)];
   newEntry.image = problem.image;
   newEntry.point = coordinates[newEntry.location];
+  newEntry.latitude = coordinates[newEntry.location].coordinates[0];
+  newEntry.longitude = coordinates[newEntry.location].coordinates[1];
   listings.push(newEntry);
   // }
   return newEntry;
 }
 
-const users = createUsers(15);
+const users = createUsers(20);
 let listings = [];
 
 users.forEach((user) => {
@@ -367,17 +372,19 @@ users.forEach((user) => {
       let newListing = createListing(listing.user_id);
       return db.listings.create(newListing);
     })
-    .then(function() {
-      console.log(listings[0].point);
-    })
-    .then(function() {
-      sequelize.close();
-    })
+    // .then(function() {
+    //   console.log(listings[0].point);
+    // })
+    // .then(function() {
+    //   sequelize.close();
+    // })
     .catch(function(err) {
       console.error(err);
       sequelize.close();
     });
 });
+
+
 console.log(seedData.listings.length)
 // listings.forEach(function(listing) {
 //   db.sequelize.sync({force:true})
