@@ -7,6 +7,7 @@ Get Fixed is a new App that connects people with problems/issues such as automot
 Fork the app on to your computer.
 -Run npm install
 -run npm start
+-run npm webpack
 
 ### Prerequisites
 
@@ -20,6 +21,7 @@ Fork the app on to your computer.
 (From Terminal)
 -Run 'npm install'
 -Run 'npm start'
+-Run 'npm run webpack'
 
 you will need to populate the database with with data if you want to view or play with listings
 we have provided you with a fake seed data .
@@ -28,28 +30,17 @@ we have provided you with a fake seed data .
 
 you will need to rerun 'npm start'
 
-## Running the tests
-
-n/a
-
-### Break down into end to end tests
-
-n/a
-
-
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+You will need to edit the settings sequelize settings in server/database/index.js with you're deployment details.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
+* [React](https://reactjs.org/docs/hello-world.html) - The web framework used
+* [Node](https://nodejs.org/en/docs/) - Server/Dependency Management
+* [MySQL](https://dev.mysql.com/doc/) - Databse
+* [Sequelize](http://docs.sequelizejs.com/) - ORM
+* [GraphQL](http://graphql.org/learn/) - API Query Language
 
 ## Versioning
 
