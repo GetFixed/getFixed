@@ -329,10 +329,7 @@ const coordinates = {
     coordinates: [38.5816, -121.4944],
   },
 }
-var uniqueUsers= [{
 
-},
-]
 function createListing(userID) {
   // let listings = [];
   // for (var i = 0; i <= quantity; i++) {
@@ -352,7 +349,7 @@ function createListing(userID) {
   return newEntry;
 }
 
-const users = createUsers(20);
+const users = createUsers(15);
 let listings = [];
 
 users.forEach((user) => {
@@ -375,9 +372,9 @@ users.forEach((user) => {
     // .then(function() {
     //   console.log(listings[0].point);
     // })
-    // .then(function() {
-    //   sequelize.close();
-    // })
+    .then(function() {
+      sequelize.close();
+    })
     .catch(function(err) {
       console.error(err);
       sequelize.close();
